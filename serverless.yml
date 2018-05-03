@@ -15,10 +15,18 @@ functions:
     handler: bin/publish
     timeout: 15
     events:
+      # Edit this value to change how often this task runs.
       - schedule: rate(1 hour)
     environment:
+      # Create a Github personal access token and store it in AWS Systems Manager Parameter Store with the key `github_token`
+      # Instructions for obtaining an access token: https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/
       github_token: ${ssm:github_token}
-      author_name: DJ
-      author_email: dj@forestry.io
-      repos: https://github.com/dwalkr/c-s-s-demo;https://github.com/dwalkr/forestry-demo2;https://github.com/dwalkr/menutest
+
+      # Add your git signature
+      author_name: your-author-name
+      author_email: your-author-email
+
+      # List of repos to autopublish. Separate each repo with a semicolon.
+      # Autopublish will push a new commit to the master branch.
+      repos: https://github.com/FIRST-REPO;https://github.com/SECOND-REPO;
       
