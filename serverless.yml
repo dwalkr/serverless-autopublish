@@ -16,7 +16,7 @@ functions:
     timeout: 15
     events:
       # Edit this value to change how often this task runs.
-      - schedule: rate(1 hour)
+      - schedule: rate(6 hours)
     environment:
       # Create a Github personal access token and store it in AWS Systems Manager Parameter Store with the key `github_token`
       # Instructions for obtaining an access token: https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/
