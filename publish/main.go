@@ -46,6 +46,7 @@ func publishRepos(repos []string, token string, authorName string, authorEmail s
 			defer wg.Done()
 			err = publish(repo, token, signature)
 			if err != nil {
+				fmt.Printf("Error updating %s: %s\n", repo, err)
 				mutex.Lock()
 				failed = append(failed, repo)
 				mutex.Unlock()
@@ -88,7 +89,7 @@ func publish(repo string, token string, signature *object.Signature) error {
 func clone(repo string, repoPath string, token string) (*git.Repository, error) {
 	r, err := git.PlainClone(repoPath, false, &git.CloneOptions{
 		URL:               repo,
-		RecurseSubmodules: git.DefaultSubmoduleRecursionDepth,
+		RecurseSubmodules: 0,
 	})
 	if err != nil {
 		return &git.Repository{}, err
