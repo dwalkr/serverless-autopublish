@@ -13,6 +13,7 @@ package:
 functions:
   publish:
     handler: bin/publish
+    timeout: 15
     events:
       - schedule: rate(1 hour)
     environment:
