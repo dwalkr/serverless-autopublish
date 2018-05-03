@@ -20,11 +20,6 @@ type Response struct {
 	Message string `json:"message"`
 }
 
-type PublishStatus struct {
-	repo      string
-	succeeded bool
-}
-
 func Handler() (Response, error) {
 	repos := strings.Split(os.Getenv("repos"), ";")
 	token := os.Getenv("github_token")
@@ -77,6 +72,7 @@ func publishRepos(repos []string, token string, authorName string, authorEmail s
 func publish(repo string, token string, signature *object.Signature) error {
 	repoPath, err := ioutil.TempDir("", path.Base(repo))
 	defer os.RemoveAll(repoPath)
+
 	r, err := clone(repo, repoPath, token)
 	if err != nil {
 		return err
