@@ -28,5 +28,5 @@ functions:
 
       # List of repos to autopublish. Separate each repo with a semicolon.
       # Autopublish will push a new commit to the master branch.
-      repos: https://github.com/FIRST-REPO;https://github.com/SECOND-REPO;
+      repos: https://github.com/FIRST-REPO;https://github.com/SECOND-REPO
       
