@@ -1,0 +1,23 @@
+service: autopublisher
+
+provider:
+  name: aws
+  runtime: go1.x
+
+package:
+ exclude:
+   - ./**
+ include:
+   - ./bin/**
+
+functions:
+  publish:
+    handler: bin/publish
+    events:
+      - schedule: rate(1 hour)
+    environment:
+      github_token: ${ssm:github_token}
+      author_name: DJ
+      author_email: dj@forestry.io
+      repos: https://github.com/dwalkr/c-s-s-demo;https://github.com/dwalkr/forestry-demo2;https://github.com/dwalkr/menutest
+      
