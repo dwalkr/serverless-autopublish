@@ -45,7 +45,7 @@ The variables in the `environment` section are passed to the function as environ
 Run `serverless deploy` to deploy the function to AWS. Your command should start running on the specified schedule. To invoke it immediately, run `serverless invoke -f publish` in your project directory.
 
 ### Troubleshooting
-If something doesn't seem to be working, you can inspect the output of your function by running `serveless logs -f publish`
+If something doesn't seem to be working, you can inspect the output of your function by running `serverless logs -f publish`
 
 ### Remove From AWS
 
