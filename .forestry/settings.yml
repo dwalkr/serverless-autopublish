@@ -8,7 +8,7 @@ sections:
   path: README.md
   label: Home
 - type: directory
-  path: docs/**
+  path: docs/**/*
   label: Docs
   create: all
   match: "**/*"
