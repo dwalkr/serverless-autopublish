@@ -9,7 +9,7 @@ sections:
   label: Home
 - type: directory
   path: docs
-  label: Docs
+  label: 'Docs '
   create: all
   match: "**/*"
 upload_dir: uploads
