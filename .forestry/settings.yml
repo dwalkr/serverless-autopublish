@@ -7,11 +7,6 @@ sections:
 - type: document
   path: README.md
   label: Home
-- type: directory
-  path: docs
-  label: 'Docs '
-  create: all
-  match: "**/*"
 upload_dir: uploads
 public_path: "/uploads"
 front_matter_path: ''
