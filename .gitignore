@@ -1,5 +1,9 @@
 # nodejs packages
 node_modules/
+
+# VuePress stuff
+.vuepress/dist
+
 # Serverless directories
 .serverless
 
